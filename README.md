@@ -1,6 +1,6 @@
 # 🏠 Dotfiles – My Cross-Platform Dev Environment
 
-Welcome to my dotfiles repository. This is the central hub I use to manage and synchronize my developer environment across **macOS**, **Arch Linux**, and **WSL**. Powered by [GNU Stow](https://www.gnu.org/software/stow/), Vim, and the Unix philosophy.
+Welcome to my dotfiles repository. This is the central hub I use to manage and synchronize my developer environment across **macOS**, **Arch Linux**, and **WSL**. Powered by [GNU Stow](https://www.gnu.org/software/stow/)
 
 ## 🧘 Philosophy
 
@@ -24,20 +24,12 @@ dotfiles/
 
 Each directory inside `stow/` is a [stow package](https://www.gnu.org/software/stow/manual/stow.html#Concepts) containing symlink-ready dotfiles.
 
-## 🛠️ Managed Tools
-
-- vim/neovim
-- zsh
-- tmux
-- git
-- wezterm
-- Additional CLI utilities
 
 ## ⚙️ Installation
 
 1. Clone the repository:
    ```bash
-   git clone git@github.com:yourusername/dotfiles.git ~/dotfiles
+   git clone git@github.com:fabrizioanichini/dotfiles.git ~/dotfiles
    cd ~/dotfiles
    ```
 
