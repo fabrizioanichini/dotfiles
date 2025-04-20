@@ -20,7 +20,6 @@ set relativenumber
 set scrolloff=8
 set clipboard=unnamed
 set noswapfile
-colorscheme desert
 
 " ===================== Key Mappings =====================
 let mapleader = " "
