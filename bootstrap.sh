@@ -1,22 +1,30 @@
 #!/bin/bash
+set -e
 
 cd ~/dotfiles/stow
 
+info() {
+  echo -e "\n🌀 $1"
+}
+
+info "Stowing common dotfiles..."
 stow common
 
 OS="$(uname -s)"
 case "$OS" in
   Darwin)
-    echo "Stowing macOS-specific dotfiles..."
+    info "Stowing macOS-specific dotfiles..."
     stow macos
     ;;
   Linux)
     if grep -q Microsoft /proc/version; then
-      echo "Stowing WSL-specific dotfiles..."
+      info "Stowing WSL-specific dotfiles..."
       stow wsl
     else
-      echo "Stowing Arch-specific dotfiles..."
+      info "Stowing Arch-specific dotfiles..."
       stow arch
     fi
     ;;
 esac
+
+info "✅ Dotfiles stowed successfully."
