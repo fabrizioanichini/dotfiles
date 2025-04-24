@@ -5,7 +5,6 @@ SCRIPT_FILE="$HOME/.config/tmux/tmux-scripts-list"
 # Ensure the script file exists
 if [ ! -f "$SCRIPT_FILE" ]; then
     echo "Script file not found: $SCRIPT_FILE"
-    exit 1
 fi
 
 # Use FZF to select a command
@@ -23,7 +22,6 @@ elif command -v xclip &>/dev/null; then
     echo -n "$SELECTED_SCRIPT" | xclip -selection clipboard
 else
     echo "No clipboard tool found"
-    exit 1
 fi
 
 # Show a message in tmux and close the pane
