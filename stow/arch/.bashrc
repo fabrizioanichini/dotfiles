@@ -1,6 +1,8 @@
 # Exit early if the shell is not interactive
 [[ $- != *i* ]] && return
 
+bind '"\C-o":"source ~/.config/tmux/tmux-sessionizer.sh\n"'
+
 # ===================== Aliases =====================
 # Custom aliases to simplify common commands
 alias ls='ls --color=auto'       # Add colors to 'ls' output for better readability
