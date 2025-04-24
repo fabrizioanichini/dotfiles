@@ -9,15 +9,15 @@ OS="$(uname -s)"
 case "$OS" in
   Darwin)
     echo "Stowing macOS-specific dotfiles..."
-    stow -t ~ macos
+    stow -t ~ --adopt macos
     ;;
   Linux)
     if grep -q Microsoft /proc/version; then
       echo "Stowing WSL-specific dotfiles..."
-      stow -t ~ wsl
+      stow -t ~ --adopt wsl
     else
       echo "Stowing Arch-specific dotfiles..."
-      stow -t ~ arch
+      stow -t ~ --adopt arch
     fi
     ;;
 esac
