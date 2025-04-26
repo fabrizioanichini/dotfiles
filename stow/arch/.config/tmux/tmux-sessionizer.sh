@@ -15,7 +15,7 @@ else
 fi
 
 # Get SSH labels from .ssh_hosts and prefix them
-ssh_labels=$(awk -F': ' '{print "[SSH] " $1}' ~/.config/tmux/ssh_hosts)
+ssh_labels=$(awk -F': ' '{print "[SSH] " $1}' ~/.config/tmux/ssh-hosts)
 
 # Combine all items
 items=$(printf "%s\n%s\n%s" "$project_dirs" "$dotfiles_entry" "$ssh_labels" | sed '/^$/d')
