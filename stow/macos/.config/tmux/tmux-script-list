@@ -1,0 +1,31 @@
+harlequin -a postgres "postgres://docker:docker@127.0.0.1:5432/tomato"
+codeselect
+journalctl -u gunicorn.service -f
+pip cache purge
+sudo systemctl restart gunicorn
+python manage.py fetch_invoices_xml --restaurant-uuid [uuid]
+docker exec -it back-web-1 sh
+python manage.py collectstatic --noinput
+python manage.py mark_empty_invoices
+python manage.py print_invoice_issues
+python manage.py set_manual_upload <RESTAURANT_UUID1>
+python manage.py update_xml_counts <RESTAURANT_UUID>
+python manage.py delete_old_notifications
+python manage.py check_expiring_licenses
+python manage.py makemigrations
+python manage.py migrate
+osascript -e 'id of application "iA Writer"'
+sudo vim /etc/systemd/system/gunicorn.service
+sudo vim /etc/nginx/sites-available/tomato
+sudo systemctl reload nginx
+sudo tail -f /var/log/nginx/error.log
+sudo systemctl status gunicorn
+export EDITOR=vim && crontab -e
+docker logs -f tomato-docker-web-1
+tail -f /var/log/eb-docker/containers/eb-current-app/eb-stdouterr.log
+docker compose -f docker-compose-DO.yml up
+aws s3 cp ./function-with-libs.zip s3://664418966159-lambda-deployments/invoices-ade.zip
+aws lambda update-function-code --function-name invoices-ade --s3-bucket 664418966159-lambda-deployments --s3-key invoices-ade.zip --region eu-central-1
+aws lambda invoke --function-name invoices-ade --payload file://test-event.json --cli-binary-format raw-in-base64-out response.json
+python manage.py disable_demo_rest
+python manage.py overnight_fetch_invoices
