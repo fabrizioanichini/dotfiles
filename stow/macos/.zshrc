@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Tmux sessionizer
-bindkey -s '^O' 'source ~/.tmux-sessionizer.sh\n'
+bindkey -s '^O' 'source ~/.config/tmux/tmux-sessionizer.sh\n'
 
 # Autoload nvm
 export NVM_DIR="$HOME/.nvm"
