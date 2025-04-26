@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+TARGET_PANE="$1"
 SCRIPT_FILE="$HOME/.config/tmux/tmux-scripts-list"
 
 if [ ! -f "$SCRIPT_FILE" ]; then
@@ -28,5 +29,7 @@ else
 fi
 
 tmux display-message "Copied: $SELECTED_SCRIPT"
+tmux send-keys -t "$TARGET_PANE" "$SELECTED_SCRIPT"
+
 sleep 0.5
 tmux kill-pane
