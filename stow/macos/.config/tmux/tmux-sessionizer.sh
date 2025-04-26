@@ -7,7 +7,7 @@ tmux start-server
 dirs=$(find ~/projects ~/tomato -mindepth 1 -maxdepth 1 -type d | sed 's|^|[DIR] |')
 
 # Get SSH labels from .ssh_hosts and prefix them
-ssh_labels=$(awk -F': ' '{print "[SSH] " $1}' ~/.ssh_hosts)
+ssh_labels=$(awk -F': ' '{print "[SSH] " $1}' ~/.ssh-hosts)
 
 # Combine directories and SSH labels
 items=$(printf "%s\n%s" "$dirs" "$ssh_labels")
