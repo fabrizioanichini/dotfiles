@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-cd ~/dotfiles/stow
+cd ~/.dotfiles/stow
 
 info() {
   echo -e "\n🔧 $1"
