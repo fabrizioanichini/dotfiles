@@ -1,0 +1,7 @@
+Tomato-docker: ssh -i ~/.ssh/id_ed25519 root@164.90.170.238
+Tomato-devasto: ssh -i ~/.ssh/id_ed25519 root@3.67.206.201
+Tomato-potato: ssh -i ~/.ssh/id_ed25519 root@63.176.240.242
+Tomato-stagno: ssh -i ~/.ssh/id_ed25519 root@134.122.90.109
+Tomato-staging: ssh -i ~/.ssh/id_ed25519 root@164.90.226.131
+Tomato-prodezza: ssh -i ~/.ssh/id_ed25519 root@159.89.5.105
+Tomato-app: ssh -i ~/.ssh/id_ed25519 root@167.172.107.164
