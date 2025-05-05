@@ -15,7 +15,7 @@ else
 fi
 
 # Get SSH labels from .ssh_hosts and prefix them
-ssh_labels=$(awk -F': ' '{print "[SSH] " $1}' ~/.config/tmux/ssh-hosts)
+ssh_labels=$(awk -F': ' '{print "[SSH] " $1}' ~/.config/tmux/ssh_hosts)
 
 # Combine all items
 items=$(printf "%s\n%s\n%s" "$project_dirs" "$dotfiles_entry" "$ssh_labels" | sed '/^$/d')
@@ -56,6 +56,13 @@ elif [[ $selection == "[SSH]"* ]]; then
   fi
 
   session_name="ssh-$label"
+  
+  # Create the tmux session
+  if ! tmux has-session -t "$session_name" 2>/dev/null; then
+    tmux new-session -s "$session_name" -d
+    tmux send-keys -t "$session_name" "$ssh_command" C-m
+    tmux set-option -t "$session_name" default-command "$ssh_command"
+  fi
 
 else
   echo "Invalid selection"
