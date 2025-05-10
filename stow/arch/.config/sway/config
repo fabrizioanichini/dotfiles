@@ -23,7 +23,7 @@ set $menu wmenu-run
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg ~/.local/share/background/archlinux.png fill
+output * bg ~/.local/share/background/valley.png fill
 
 # HDMI LG – make this the primary display
 output DP-4 resolution 3840x2160 position 0,0 scale 2
