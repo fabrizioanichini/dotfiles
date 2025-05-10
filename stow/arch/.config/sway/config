@@ -26,7 +26,7 @@ set $menu wmenu-run
 output * bg ~/.local/share/background/valley.jpg fill
 
 # HDMI LG – make this the primary display
-output DP-4 resolution 3840x2160 position 0,0 scale 2
+output DP-2 resolution 3840x2160 position 0,0 scale 2
 
 # Laptop Framework – position this relative to the HDMI
 output eDP-1 resolution 2256x1504 position 3840,0
@@ -208,8 +208,8 @@ bindsym Control+space input "1278:33:HHKB-Hybrid_1_Keyboard" xkb_switch_layout n
     bindsym $mod+a focus parent
 
     default_border none
-    gaps inner 2
-    gaps outer 1
+    gaps inner 4
+    gaps outer 2
 
 #
 # Scratchpad:
