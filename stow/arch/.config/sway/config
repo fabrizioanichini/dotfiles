@@ -73,10 +73,6 @@ input "1278:33:HHKB-Hybrid_1_Keyboard" {
     # xkb_options "grp:alt_shift_toggle"
 }
 
-input * {
-    xkb_options "ctrl:swapcaps"
-}
-
 # Map Switch Layout like MacOs 
 bindsym Control+space input "1278:33:HHKB-Hybrid_1_Keyboard" xkb_switch_layout next
 
